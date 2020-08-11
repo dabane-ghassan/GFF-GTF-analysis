@@ -62,13 +62,13 @@ class GeneralFormat():
         """
         exon_len = [
             int(end) - int(start) + 1
-            for end, start in zip(gtf.choose_colomn(5), gtf.choose_colomn(4))
+            for end, start in zip(self.choose_colomn(5), self.choose_colomn(4))
         ]  # List of lengths (end colomn - start colomn) for every line in the
            # file
 
         cdna = dict(
         )  # Dictionray with accumulated exon length for every transcript
-        for ID, LEN in zip(gtf.tx_ID(), exon_len):
+        for ID, LEN in zip(self.tx_ID(), exon_len):
             if ID in cdna:
                 cdna[ID] += LEN
             else:
@@ -82,8 +82,8 @@ class GeneralFormat():
         """
 
         starts, ends = dict(), dict()
-        for ID, start, end in zip(gtf.tx_ID(), gtf.choose_colomn(4),
-                                  gtf.choose_colomn(5)):
+        for ID, start, end in zip(self.tx_ID(), self.choose_colomn(4),
+                                  self.choose_colomn(5)):
             if ID not in starts:
                 starts[ID] = start
                 ends[ID] = end
