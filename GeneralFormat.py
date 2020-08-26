@@ -34,7 +34,7 @@ class GeneralFormat():
         ]  # Attributes colomn 9
 
     def nb_nr_tx(self):
-        """This fonction prints out the number of non-redondant transcripts 
+        """This function prints out the number of non-redondant transcripts 
         in a GTF file.
         """
         print("The number of non-redondant transcripts \n in this file is %s" %
